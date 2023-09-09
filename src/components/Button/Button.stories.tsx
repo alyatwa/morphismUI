@@ -27,5 +27,17 @@ const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
 export const DefaultButton = Template.bind({});
 DefaultButton.storyName = 'Default';
 DefaultButton.args = {
-  children: 'Button',
+  children: '+ Add Account',
 };
+
+export const Secondary = Template.bind({});
+Secondary.storyName = 'Secondary';
+Secondary.args = {
+color:'transparent',
+  children: 'Edit Profile',
+};
+/* export const Secondary = (): JSX.Element => (
+    <div className="flex flex-row gap-3">
+      <Button children="Edit Profile" color="transparent"  />
+    </div>
+  ); */

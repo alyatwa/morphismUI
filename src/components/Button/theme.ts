@@ -9,7 +9,10 @@ export const buttonTheme: ButtonTheme = {
     failure:
       'text-white bg-red-700 border border-transparent enabled:hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:enabled:hover:bg-red-700 dark:focus:ring-red-900',
     gray: 'text-gray-900 bg-white border border-gray-200 enabled:hover:bg-gray-100 enabled:hover:text-cyan-700 :ring-cyan-700 focus:text-cyan-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:enabled:hover:text-white dark:enabled:hover:bg-gray-700 focus:ring-2',
-    info: 'text-white bg-cyan-700 border border-transparent enabled:hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:enabled:hover:bg-cyan-700 dark:focus:ring-cyan-800',
+    
+    transparent: 'text-blue-600 bg-blue-100 border border-transparent enabled:hover:bg-blue-800 focus:ring-none focus:ring-blue-300 dark:bg-blue-100 dark:enabled:hover:bg-blue-200 dark:focus:ring-blue-800',
+
+    info: 'text-white bg-blue-700 border border-transparent enabled:hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:enabled:hover:bg-blue-700 dark:focus:ring-blue-800',
     light:
       'text-gray-900 bg-white border border-gray-300 enabled:hover:bg-gray-100 focus:ring-4 focus:ring-cyan-300 :bg-gray-600 dark:text-white dark:border-gray-600 dark:enabled:hover:bg-gray-700 dark:enabled:hover:border-gray-700 dark:focus:ring-gray-700',
     purple:
@@ -89,7 +92,7 @@ export const buttonTheme: ButtonTheme = {
     },
   },
   label:
-    'ml-2 inline-flex h-4 w-4 items-center justify-center rounded-full bg-cyan-200 text-xs font-semibold text-cyan-800',
+    'ml-2 inline-flex h-4 w-4 items-center justify-center rounded-full bg-cyan-200 text-xs font-normal text-cyan-800',
   outline: {
     color: {
       gray: 'border border-gray-900 dark:border-white',
@@ -109,7 +112,7 @@ export const buttonTheme: ButtonTheme = {
   },
   size: {
     xs: 'text-xs px-2 py-1',
-    sm: 'text-sm px-3 py-1.5',
+    sm: 'text-xs px-3 py-1.5',
     md: 'text-sm px-4 py-2',
     lg: 'text-base px-5 py-2.5',
     xl: 'text-base px-6 py-3',

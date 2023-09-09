@@ -99,7 +99,7 @@ const ButtonComponentFn = <T extends ElementType = 'button'>(
     gradientMonochrome,
     label,
     outline = false,
-    pill = false,
+    pill = true,
     positionInGroup = 'none',
     size = 'md',
     theme: customTheme = {},
