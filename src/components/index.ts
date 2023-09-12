@@ -3,10 +3,11 @@ export * from './Alert/Alert';
 export * from './Avatar/Avatar';
 export * from './Badge';
 export * from './Breadcrumb';
-export * from './Card';
+
 export * from './Carousel'; */
 export * from './Button';
 export * from './Checkbox';
+export * from './Paper';
 /* export * from './DarkThemeToggle/DarkThemeToggle';
 export * from './Dropdown';
 export * from './FileInput'; */

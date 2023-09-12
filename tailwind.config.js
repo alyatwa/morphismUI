@@ -7,6 +7,12 @@ export default {
   presets: [],
   //darkMode: 'media', // or 'class'
   theme: {
+    extend:
+    {
+      fontFamily: {
+        'texta': ['texta', 'sans-serif']
+      },
+    },
     accentColor: ({ theme }) => ({
       ...theme('colors'),
       auto: 'auto',

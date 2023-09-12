@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'texta';
+  src: url('/texta/TextaAltRegular.ttf') format('truetype');
+  font-weight: regular;
+  font-style: regular;
+}
+
+@font-face {
+  font-family: "texta";
+  src: url('/texta/TextaAltThin.ttf') format('truetype');
+  font-weight: thin;
+  font-style: thin;
+}
+@font-face {
+  font-family: "texta";
+  src: url('/texta/TextaAltLight.ttf') format('truetype');
+  font-weight: light;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "texta";
+  src: url('/texta/TextaAltBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "texta";
+  src: url('/texta/TextaAltMedium.ttf') format('truetype');
+  font-weight: meduim;
+  font-style: meduim;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

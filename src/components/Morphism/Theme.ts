@@ -6,8 +6,9 @@ import type {
     FlowbiteBadgeTheme,
     FlowbiteBreadcrumbTheme,
    
-    FlowbiteCardTheme,
+    
     FlowbiteCarouselTheme, */
+    PaperTheme,
     ButtonGroupTheme,
     ButtonTheme,
     CheckboxTheme,
@@ -48,7 +49,7 @@ import type {
     badge: FlowbiteBadgeTheme;
     breadcrumb: FlowbiteBreadcrumbTheme;
     
-    card: FlowbiteCardTheme;
+    
     carousel: FlowbiteCarouselTheme;
     darkThemeToggle: FlowbiteDarkThemeToggleTheme;
     footer: FlowbiteFooterTheme;
@@ -64,6 +65,7 @@ import type {
     toast: FlowbiteToastTheme;
     tooltip: FlowbiteTooltipTheme;
     dropdown: FlowbiteDropdownTheme; */
+    paper: PaperTheme;
     spinner: SpinnerTheme;
     button: ButtonTheme;
     buttonGroup: ButtonGroupTheme;
