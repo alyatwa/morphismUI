@@ -33,8 +33,8 @@ const prefersColorScheme: () => Mode = () => {
   if (!isClient()) {
     return 'light';
   }
-
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+   //return 'light';
+ return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 };
 
 export const useThemeMode: () => [Mode, Dispatch<SetStateAction<Mode>>, () => void] = () => {

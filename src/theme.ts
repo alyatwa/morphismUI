@@ -1,17 +1,17 @@
-import type { Theme } from '.';
+import type { Theme } from ".";
 /* import { accordionTheme } from './components/Accordion/theme';
 import { alertTheme } from './components/Alert/theme';
 import { avatarTheme } from './components/Avatar/theme';
 import { badgeTheme } from './components/Badge/theme';
 import { breadcrumbTheme } from './components/Breadcrumb/theme';
 
-import { cardTheme } from './components/Card/theme';
 import { carouselTheme } from './components/Carousel/theme'; */
-import { spinnerTheme } from './components/Spinner/theme';
-import { buttonGroupTheme, buttonTheme } from './components/Button/theme';
-import { checkboxTheme } from './components/Checkbox/theme';
-/* import { darkThemeToggleTheme } from './components/DarkThemeToggle/theme';
-import { dropdownTheme } from './components/Dropdown/theme';
+import { paperTheme } from "./components/Paper/theme";
+import { spinnerTheme } from "./components/Spinner/theme";
+import { buttonGroupTheme, buttonTheme } from "./components/Button/theme";
+import { checkboxTheme } from "./components/Checkbox/theme";
+import { darkThemeToggleTheme } from './components/DarkThemeToggle/theme';
+/* import { dropdownTheme } from './components/Dropdown/theme';
 import { fileInputTheme } from './components/FileInput/theme';
 import { footerTheme } from './components/Footer/theme';
 import { helperTextTheme } from './components/HelperText/theme';
@@ -37,21 +37,19 @@ import { toggleSwitchTheme } from './components/ToggleSwitch/theme';
 import { tooltipTheme } from './components/Tooltip/theme';
  */
 export const theme: Theme = {
-/*   accordion: accordionTheme,
+	/*   accordion: accordionTheme,
   alert: alertTheme,
   avatar: avatarTheme,
   badge: badgeTheme,
   breadcrumb: breadcrumbTheme,
-  
-  
-  card: cardTheme,
   carousel: carouselTheme, */
-  buttonGroup: buttonGroupTheme,
-  button: buttonTheme,
-  checkbox: checkboxTheme,
-  spinner: spinnerTheme,
- /*  darkThemeToggle: darkThemeToggleTheme,
-  dropdown: dropdownTheme,
+	paper: paperTheme,
+	buttonGroup: buttonGroupTheme,
+	button: buttonTheme,
+	checkbox: checkboxTheme,
+	spinner: spinnerTheme,
+	darkThemeToggle: darkThemeToggleTheme,
+  /*  dropdown: dropdownTheme,
   fileInput: fileInputTheme,
   footer: footerTheme,
   helperText: helperTextTheme,

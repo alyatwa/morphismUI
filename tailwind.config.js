@@ -10,7 +10,11 @@ export default {
     extend:
     {
       fontFamily: {
-        'texta': ['texta', 'sans-serif']
+        'textaRegular': ['textaRegular', 'sans-serif'],
+        'textaThin': ['textaThin', 'sans-serif'],
+        'textaLight': ['textaLight', 'sans-serif'],
+        'textaBold': ['textaBold', 'sans-serif'],
+        'textaMedium': ['textaMedium', 'sans-serif']
       },
     },
     accentColor: ({ theme }) => ({

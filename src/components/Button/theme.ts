@@ -2,7 +2,7 @@ import type { ButtonTheme } from './Button';
 import type { ButtonGroupTheme } from './ButtonGroup';
 
 export const buttonTheme: ButtonTheme = {
-  base: 'group flex h-min items-center justify-center py-0.5 px-4 focus:ring-transparent text-center font-texta font-extrabold relative focus:z-10 focus:outline-none',
+  base: 'group flex h-min items-center justify-center py-0.5 px-4 font-textaBold focus:ring-transparent text-center relative focus:z-10 focus:outline-none',
   fullSized: 'w-full',
   color: {
     dark: 'text-white bg-gray-800 border border-transparent enabled:hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 dark:bg-gray-800 dark:enabled:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700',
@@ -111,11 +111,11 @@ export const buttonTheme: ButtonTheme = {
     on: 'rounded-full',
   },
   size: {
-    xs: 'text-xs py-1 px-4',
-    sm: 'text-sm px-4 py-1.5',
-    md: 'text-sm px-4 py-2',
-    lg: 'text-base px-5 py-2.5',
-    xl: 'text-base px-6 py-3',
+    xs: 'font-textaBold text-base py-1 px-4',
+    sm: 'font-textaBold text-base px-4 py-1.5',
+    md: 'font-textaBold text-base px-4 py-2',
+    lg: 'font-textaMedium text-xl px-5 py-2.5',
+    xl: 'font-textaMedium text-lg px-6 py-3',
   },
 };
 

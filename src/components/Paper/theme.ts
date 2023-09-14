@@ -2,7 +2,7 @@ import type { PaperTheme } from './Paper';
 
 export const paperTheme: PaperTheme = {
   root: {
-    base: 'flex rounded-xk bg-white shadow-md dark:bg-gray-800',
+    base: 'flex rounded-2xl bg-white/80 drop-shadow-xl',
     children: 'flex h-full flex-col justify-center gap-4 p-6',
     horizontal: {
       off: 'flex-col',

@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+import { themes } from '@storybook/theming';
 
 import { withThemeByClassName } from '@storybook/addon-styling';
 
@@ -14,6 +15,12 @@ const preview: Preview = {
     selector: "body",}
   },
   parameters: {
+    darkMode: {
+      // Override the default dark theme
+      dark: { ...themes.dark, appBg: 'black' },
+      // Override the default light theme
+      light: { ...themes.normal, appBg: 'white' }
+    },
     background: {
       default: "white",
       selector: "body",

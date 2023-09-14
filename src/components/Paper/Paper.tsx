@@ -50,7 +50,7 @@ export const Paper: FC<PaperProps> = (props) => {
   const theirProps = removeCustomProps(props);
 
   const theme = mergeDeep(useTheme().theme.paper, customTheme);
-console.log(useTheme().theme)
+  
   return (
     <Component
       data-testid="paper"

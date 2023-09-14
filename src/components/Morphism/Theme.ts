@@ -5,16 +5,15 @@ import type {
     FlowbiteAvatarTheme,
     FlowbiteBadgeTheme,
     FlowbiteBreadcrumbTheme,
-   
-    
     FlowbiteCarouselTheme, */
-    PaperTheme,
+    
     ButtonGroupTheme,
     ButtonTheme,
     CheckboxTheme,
     SpinnerTheme,
-    /* FlowbiteDarkThemeToggleTheme,
-    FlowbiteDropdownTheme,
+    PaperTheme,
+    DarkThemeToggleTheme,
+    /*  FlowbiteDropdownTheme,
     FlowbiteFileInputTheme,
     FlowbiteFooterTheme,
     FlowbiteHelperTextTheme,
@@ -51,7 +50,7 @@ import type {
     
     
     carousel: FlowbiteCarouselTheme;
-    darkThemeToggle: FlowbiteDarkThemeToggleTheme;
+    
     footer: FlowbiteFooterTheme;
     listGroup: FlowbiteListGroupTheme;
     modal: FlowbiteModalTheme;
@@ -65,6 +64,7 @@ import type {
     toast: FlowbiteToastTheme;
     tooltip: FlowbiteTooltipTheme;
     dropdown: FlowbiteDropdownTheme; */
+    darkThemeToggle: DarkThemeToggleTheme;
     paper: PaperTheme;
     spinner: SpinnerTheme;
     button: ButtonTheme;
