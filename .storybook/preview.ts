@@ -22,7 +22,7 @@ const preview: Preview = {
       light: { ...themes.normal, appBg: 'white' }
     },
     background: {
-      default: "white",
+      default: "gradient",
       selector: "body",
       onChange(background) {
         // handle new background

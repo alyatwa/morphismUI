@@ -111,9 +111,9 @@ export const buttonTheme: ButtonTheme = {
     on: 'rounded-full',
   },
   size: {
-    xs: 'font-textaBold text-base py-1 px-4',
-    sm: 'font-textaBold text-base px-4 py-1.5',
-    md: 'font-textaBold text-base px-4 py-2',
+    xs: 'font-textaBold text-base px-4 py-1',
+    sm: 'font-textaBold text-base px-4 py-1',
+    md: 'font-textaBold text-base px-4 py-1',
     lg: 'font-textaMedium text-xl px-5 py-2.5',
     xl: 'font-textaMedium text-lg px-6 py-3',
   },

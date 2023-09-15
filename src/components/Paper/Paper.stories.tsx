@@ -22,9 +22,5 @@ const Template: StoryFn<PaperProps> = (args: PaperProps) => (
 export const Default = Template.bind({});
 Default.args = {};
 
-export const Horizontal = Template.bind({});
-Horizontal.args = {
-  horizontal: true,
-};
 
  

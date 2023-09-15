@@ -1,86 +1,86 @@
 import type {
     DeepPartial,
-    /* FlowbiteAccordionTheme,
-    FlowbiteAlertTheme,
-    FlowbiteAvatarTheme,
-    FlowbiteBadgeTheme,
-    FlowbiteBreadcrumbTheme,
-    FlowbiteCarouselTheme, */
+    /* AccordionTheme,
+    AlertTheme,
     
+    BadgeTheme,
+    BreadcrumbTheme,
+    CarouselTheme, */
+    AvatarTheme,
+    TextInputTheme,
     ButtonGroupTheme,
     ButtonTheme,
     CheckboxTheme,
     SpinnerTheme,
     PaperTheme,
     DarkThemeToggleTheme,
-    /*  FlowbiteDropdownTheme,
-    FlowbiteFileInputTheme,
-    FlowbiteFooterTheme,
-    FlowbiteHelperTextTheme,
-    FlowbiteLabelTheme,
-    FlowbiteListGroupTheme,
-    FlowbiteModalTheme,
-    FlowbiteNavbarTheme,
-    FlowbitePaginationTheme,
-    FlowbiteProgressTheme,
-    FlowbiteRadioTheme,
-    FlowbiteRangeSliderTheme,
-    FlowbiteRatingTheme,
-    FlowbiteSelectTheme,
-    FlowbiteSidebarTheme,
-    
-    FlowbiteTableTheme,
-    FlowbiteTabTheme,
-    FlowbiteTextareaTheme,
-    FlowbiteTextInputTheme,
-    FlowbiteTimelineTheme,
-    FlowbiteToastTheme,
-    FlowbiteToggleSwitchTheme,
-    FlowbiteTooltipTheme, */
+    HelperTextTheme,
+    /*  DropdownTheme,
+    FileInputTheme,
+    FooterTheme,
+    LabelTheme,
+    ListGroupTheme,
+    ModalTheme,
+    NavbarTheme,
+    PaginationTheme,
+    ProgressTheme,
+    RadioTheme,
+    RangeSliderTheme,
+    RatingTheme,
+    SelectTheme,
+    SidebarTheme,
+    TableTheme,
+    TabTheme,
+    TextareaTheme,
+    TimelineTheme,
+    ToastTheme,
+    ToggleSwitchTheme,
+    TooltipTheme, */
   } from '../../components';
   
   export type CustomTheme = DeepPartial<Theme>;
   
   export interface Theme {
-   /*  accordion: FlowbiteAccordionTheme;
-    alert: FlowbiteAlertTheme;
-    avatar: FlowbiteAvatarTheme;
-    badge: FlowbiteBadgeTheme;
-    breadcrumb: FlowbiteBreadcrumbTheme;
+   /*  accordion: AccordionTheme;
+    alert: AlertTheme;
     
+    badge: BadgeTheme;
+    breadcrumb: BreadcrumbTheme;
+    carousel: CarouselTheme;
     
-    carousel: FlowbiteCarouselTheme;
+    footer: FooterTheme;
+    listGroup: ListGroupTheme;
+    modal: ModalTheme;
+    navbar: NavbarTheme;
+    rating: RatingTheme;
+    pagination: PaginationTheme;
+    sidebar: SidebarTheme;
+    progress: ProgressTheme;
     
-    footer: FlowbiteFooterTheme;
-    listGroup: FlowbiteListGroupTheme;
-    modal: FlowbiteModalTheme;
-    navbar: FlowbiteNavbarTheme;
-    rating: FlowbiteRatingTheme;
-    pagination: FlowbitePaginationTheme;
-    sidebar: FlowbiteSidebarTheme;
-    progress: FlowbiteProgressTheme;
-    
-    tab: FlowbiteTabTheme;
-    toast: FlowbiteToastTheme;
-    tooltip: FlowbiteTooltipTheme;
-    dropdown: FlowbiteDropdownTheme; */
+    tab: TabTheme;
+    toast: ToastTheme;
+    tooltip: TooltipTheme;
+    dropdown: DropdownTheme; */
+    avatar: AvatarTheme;
     darkThemeToggle: DarkThemeToggleTheme;
     paper: PaperTheme;
     spinner: SpinnerTheme;
     button: ButtonTheme;
     buttonGroup: ButtonGroupTheme;
     checkbox: CheckboxTheme;
-    /* fileInput: FlowbiteFileInputTheme;
-    label: FlowbiteLabelTheme;
-    radio: FlowbiteRadioTheme;
-    rangeSlider: FlowbiteRangeSliderTheme;
-    select: FlowbiteSelectTheme;
-    textInput: FlowbiteTextInputTheme;
-    textarea: FlowbiteTextareaTheme;
-    toggleSwitch: FlowbiteToggleSwitchTheme;
-    helperText: FlowbiteHelperTextTheme;
-    table: FlowbiteTableTheme;
-    timeline: FlowbiteTimelineTheme; */
+    textInput: TextInputTheme;
+    helperText: HelperTextTheme;
+    /* fileInput: FileInputTheme;
+    label: LabelTheme;
+    radio: RadioTheme;
+    rangeSlider: RangeSliderTheme;
+    select: SelectTheme;
+    
+    textarea: TextareaTheme;
+    toggleSwitch: ToggleSwitchTheme;
+    
+    table: TableTheme;
+    timeline: TimelineTheme; */
   }
   
   export interface Boolean {

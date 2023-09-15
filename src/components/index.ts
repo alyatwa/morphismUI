@@ -1,10 +1,9 @@
 /* export * from './Accordion/Accordion';
 export * from './Alert/Alert';
-export * from './Avatar/Avatar';
 export * from './Badge';
 export * from './Breadcrumb';
-
 export * from './Carousel'; */
+export * from './Avatar/Avatar';
 export * from './Button';
 export * from './Checkbox';
 export * from './Paper';
@@ -14,8 +13,9 @@ export * from './FileInput'; */
 export * from './Morphism';
 export type { CustomTheme } from './Morphism/Theme';
 export * from './Spinner/Spinner';
-/* export * from './Footer';
+export * from './TextInput';
 export * from './HelperText';
+/* export * from './Footer';
 export * from './Label';
 export * from './ListGroup/ListGroup';
 export * from './Modal';
@@ -29,7 +29,6 @@ export * from './Select';
 export * from './Sidebar/Sidebar';
 export * from './Tab/Tabs';
 export * from './Table';
-export * from './TextInput';
 export * from './Textarea';
 export * from './Timeline';
 export * from './Toast';
