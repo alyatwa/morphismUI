@@ -3,9 +3,9 @@ import type {
     /* AccordionTheme,
     AlertTheme,
     
-    BadgeTheme,
     BreadcrumbTheme,
     CarouselTheme, */
+    BadgeTheme,
     AvatarTheme,
     TextInputTheme,
     ButtonGroupTheme,
@@ -15,6 +15,8 @@ import type {
     PaperTheme,
     DarkThemeToggleTheme,
     HelperTextTheme,
+    SidebarTheme,
+    TooltipTheme,
     /*  DropdownTheme,
     FileInputTheme,
     FooterTheme,
@@ -28,14 +30,13 @@ import type {
     RangeSliderTheme,
     RatingTheme,
     SelectTheme,
-    SidebarTheme,
     TableTheme,
     TabTheme,
     TextareaTheme,
     TimelineTheme,
     ToastTheme,
     ToggleSwitchTheme,
-    TooltipTheme, */
+     */
   } from '../../components';
   
   export type CustomTheme = DeepPartial<Theme>;
@@ -44,23 +45,23 @@ import type {
    /*  accordion: AccordionTheme;
     alert: AlertTheme;
     
-    badge: BadgeTheme;
+    
     breadcrumb: BreadcrumbTheme;
     carousel: CarouselTheme;
-    
     footer: FooterTheme;
     listGroup: ListGroupTheme;
     modal: ModalTheme;
     navbar: NavbarTheme;
     rating: RatingTheme;
     pagination: PaginationTheme;
-    sidebar: SidebarTheme;
     progress: ProgressTheme;
     
     tab: TabTheme;
     toast: ToastTheme;
-    tooltip: TooltipTheme;
     dropdown: DropdownTheme; */
+    badge: BadgeTheme;
+    tooltip: TooltipTheme;
+    sidebar: SidebarTheme;
     avatar: AvatarTheme;
     darkThemeToggle: DarkThemeToggleTheme;
     paper: PaperTheme;
@@ -75,10 +76,8 @@ import type {
     radio: RadioTheme;
     rangeSlider: RangeSliderTheme;
     select: SelectTheme;
-    
     textarea: TextareaTheme;
     toggleSwitch: ToggleSwitchTheme;
-    
     table: TableTheme;
     timeline: TimelineTheme; */
   }
