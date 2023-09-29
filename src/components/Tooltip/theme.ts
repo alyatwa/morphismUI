@@ -12,7 +12,7 @@ export const tooltipTheme: TooltipTheme = {
     },
     placement: '-4px',
   },
-  base: 'absolute inline-block z-10 rounded-lg py-2 px-3 text-base font-medium shadow-sm font-textaBold',
+  base: 'absolute inline-block z-10 rounded-xl py-2 px-3 text-base font-medium shadow-sm font-textaBold',
   hidden: 'invisible opacity-0',
   style: {
     dark: 'bg-gray-900 text-white dark:bg-gray-700',

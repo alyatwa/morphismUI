@@ -48,7 +48,7 @@ export const sidebarTheme: SidebarTheme = {
     },
   },
   item: {
-    base: "flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-white/50 hover:text-blue-600 before:absolute hover:before:content-[' '] before:left-[16px] before:w-[2px] before:h-[37px] hover:before:bg-blue-600",
+    base: "flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-white/50 hover:text-blue-600 before:absolute hover:before:content-[' '] before:left-[16px] before:w-[2px] before:h-[45px] hover:before:bg-blue-600",
     active: 'bg-gray-100 dark:bg-gray-700',
     collapsed: {
       insideCollapse: 'group w-full pl-8 transition duration-75',
