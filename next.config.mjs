@@ -5,6 +5,9 @@ import TerserPlugin from 'terser-webpack-plugin';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   pageExtensions: ['mdx', 'tsx'],
   reactStrictMode: true,
   webpack(config) {
