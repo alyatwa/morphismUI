@@ -92,7 +92,7 @@ export const buttonTheme: ButtonTheme = {
     },
   },
   label:
-    'ml-2 inline-flex h-4 w-4 items-center justify-center rounded-full bg-blue-200 text-base text-cyan-800',
+    'inline-flex items-center justify-center rounded-full',
   outline: {
     color: {
       gray: 'border border-gray-900 dark:border-white',
@@ -111,9 +111,9 @@ export const buttonTheme: ButtonTheme = {
     on: 'rounded-full',
   },
   size: {
-    xs: 'font-textaBold text-base px-4 py-1',
-    sm: 'font-textaBold text-base px-4 py-1',
-    md: 'font-textaBold text-base px-4 py-1',
+    xs: 'font-textaRegular text-base px-4 py-1',
+    sm: 'font-textaRegular text-base px-4 py-1',
+    md: 'font-textaRegular text-xs px-4 py-2',
     lg: 'font-textaMedium text-xl px-5 py-2.5',
     xl: 'font-textaMedium text-lg px-6 py-3',
   },

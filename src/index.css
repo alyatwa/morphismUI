@@ -4,34 +4,34 @@
 
 @font-face {
   font-family: 'textaRegular';
-  src: url('/texta/TextaAltRegular.ttf') format('truetype');
+  src: url('/urbane/Urbane-Light.ttf') format('woff');
   font-weight: regular;
   font-style: regular;
 }
 
 @font-face {
   font-family: "textaThin";
-  src: url('/texta/TextaAltThin.ttf') format('truetype');
+  src: url('/urbane/Urbane-Thin.woff') format('woff');
   font-weight: thin;
   font-style: thin;
 }
 @font-face {
   font-family: "textaLight";
-  src: url('/texta/TextaAltLight.ttf') format('truetype');
+  src: url('/urbane/Urbane-Light.woff') format('woff');
   font-weight: light;
   font-style: light;
 }
 
 @font-face {
   font-family: "textaBold";
-  src: url('/texta/TextaAltBold.ttf') format('truetype');
+  src: url('/urbane/Urbane-Bold.woff') format('woff');
   font-weight: bold;
   font-style: bold;
 }
 
 @font-face {
   font-family: "textaMedium";
-  src: url('/texta/TextaAltMedium.ttf') format('truetype');
+  src: url('/urbane/Urbane-Medium.woff') format('woff');
   font-weight: meduim;
   font-style: meduim;
 }
