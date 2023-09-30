@@ -70,7 +70,7 @@ export const Paper: FC<PaperProps> = (props) => {
   );
 };
 
-const Image: FC<PaperProps> = ({ theme: customTheme = {}, ...props }) => {
+/* const Image: FC<PaperProps> = ({ theme: customTheme = {}, ...props }) => {
   const theme = mergeDeep(useTheme().theme.paper, customTheme);
   if (props.renderImage) {
     return props.renderImage(theme, props.horizontal ?? false);
@@ -86,7 +86,7 @@ const Image: FC<PaperProps> = ({ theme: customTheme = {}, ...props }) => {
     );
   }
   return null;
-};
+}; */
 
 const removeCustomProps = omit([
   'renderImage',
