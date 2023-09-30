@@ -49,7 +49,7 @@ export const sidebarTheme: SidebarTheme = {
 		},
 	},
 	item: {
-		base: "flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-white/50 hover:text-blue-600 before:absolute hover:before:content-[' '] before:left-[16px] before:w-[2px] before:h-[45px] hover:before:bg-blue-600",
+		base: "flex items-center justify-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-white/50 hover:text-blue-600 before:absolute hover:before:content-[' '] before:left-[0px] before:w-[3px] before:h-[45px] hover:before:bg-blue-600 mx-3",
 		active: "bg-gray-100 dark:bg-gray-700",
 		collapsed: {
 			insideCollapse: "group w-full pl-8 transition duration-75",
@@ -67,7 +67,7 @@ export const sidebarTheme: SidebarTheme = {
 	},
 	items: "",
 	itemGroup:
-		"mt-4 space-y-2 border-t border-gray-200 pt-4 first:mt-0 first:border-t-0 first:pt-0 dark:border-gray-700",
+		"mt-4 space-y-2 border-r border-gray-300 pt-4 first:mt-0 first:border-t-0 first:pt-0",
 	logo: {
 		base: "mb-5 flex items-center pl-2.5",
 		collapsed: {
