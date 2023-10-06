@@ -18,17 +18,8 @@ export const MainSidebar = () => {
 					<Sidebar.Item href="#" icon={HiChartPie}>
 						Dashboard
 					</Sidebar.Item>
-					<Sidebar.Item href="#" icon={HiViewBoards}>
-						Kanban
-					</Sidebar.Item>
-					<Sidebar.Item href="#" icon={HiInbox}>
-						Inbox
-					</Sidebar.Item>
 					<Sidebar.Item href="#" icon={HiUser}>
 						Users
-					</Sidebar.Item>
-					<Sidebar.Item href="#" icon={HiShoppingBag}>
-						Products
 					</Sidebar.Item>
 					<Sidebar.Item href="#" icon={HiArrowSmRight}>
 						Sign In

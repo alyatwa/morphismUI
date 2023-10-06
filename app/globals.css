@@ -36,5 +36,12 @@
   font-style: meduim;
 }
 
+@import url("~leaflet/dist/leaflet.css");
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
 .bg {
     background-image: linear-gradient(to right top, #5fc9f8, #72c9fa, #82c9fc, #91cafc, #9fcafc, #adcafc, #bbc9fb, #c7c9f9, #d7c9f6, #e5c9f1, #f0caec, #f9cce6);}

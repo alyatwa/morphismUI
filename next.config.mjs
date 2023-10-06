@@ -10,6 +10,19 @@ const nextConfig = {
   },
   pageExtensions: ['mdx', 'tsx'],
   reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin", // "same-origin-allow-popups"
+          },
+        ],
+      },
+    ];
+  },
   webpack(config) {
     // Retain React FC display names and anonymous function bodies for docs
     config.optimization.minimizer = [
