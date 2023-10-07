@@ -7,7 +7,7 @@ const Auth = () => {
 	const { isLoggedIn, user } = useAuth();
 	const handleAuth = async () => {
 		const provider = new GoogleAuthProvider();
-		signInWithPopup(auth, provider)
+		await signInWithPopup(auth, provider)
 			/* .then((result) => {
 			GoogleAuthProvider.credentialFromResult(result);
 					const token = credential?.accessToken;
