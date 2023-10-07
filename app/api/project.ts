@@ -66,6 +66,9 @@ const getProject = async (projectId: string) => {
 		console.log("No such document!");
 	}
 };
+const attachReport = async (projectId:string)=>{
+
+}
 const removePolygon = async ({
 	projectId,
 	id,
@@ -93,4 +96,4 @@ const getPolygons = async (projectId: string) => {
 	return querySnapshot.docs.map((doc) => doc.data()) as firestoreGeoPoint[];
 };
 
-export { addComment, addPolygon, removePolygon, getPolygons, getProject };
+export { addComment, addPolygon, removePolygon, getPolygons, getProject, attachReport };

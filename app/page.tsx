@@ -6,7 +6,7 @@ import { AccountsSidebar } from "./components/AccountsSidebar";
 //import { MainSidebar } from "./components/MainSidebar";
 import dynamic from "next/dynamic";
 import useAuth from "./hooks/useAuth";
-import { addComment, getProject } from "./api/project";
+import { addComment, attachReport, getProject } from "./api/project";
 import Auth from "./components/Auth";
 import CommentsList from "./components/CommentsList";
 
@@ -27,6 +27,9 @@ export default function HomeContent() {
 			}),
 		[]
 	);
+	const handleAddReport = async () => {
+		attachReport(projectId );
+	}
 	const refreshData = () => {
 		if (!user) {
 			setProject(null);
@@ -65,7 +68,7 @@ export default function HomeContent() {
 									<div className="flex items-center justify-around rounded-3xl bg-blue-400/80 h-20">
 										<Button
 											color="transparent"
-											onClick={() => handleAddComment()}
+											onClick={() => handleAddReport()}
 											label="Attach Report"
 										/>
 										<p className="ml-4 font-textaLight">file-name.pdf</p>
