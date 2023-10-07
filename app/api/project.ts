@@ -1,5 +1,6 @@
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { firestoreGeoPoint } from "../components/Map";
-import { db } from "../firebase";
+import { db, storage } from "../firebase";
 import {
 	collection,
 	addDoc,
@@ -11,7 +12,9 @@ import {
 	where,
 	getDocs,
 	getDoc,
+	setDoc,
 } from "firebase/firestore";
+
 
 const addComment = async ({
 	userId,
@@ -66,9 +69,35 @@ const getProject = async (projectId: string) => {
 		console.log("No such document!");
 	}
 };
-const attachReport = async (projectId:string)=>{
-console.log(projectId)
-}
+
+const attachReport = async (projectId:string, file:File, storagePath:string) => {
+	try {
+		
+	  const storageRef = ref(storage, storagePath);
+	  const snapshot = await uploadBytes(storageRef, file);
+	  const downloadURL = await getDownloadURL(snapshot.ref);
+	  await updateDocument('projects', projectId, { report: downloadURL });
+	  return downloadURL;
+	  
+	} catch (error) {
+	  console.error("Error uploading PDF:", error);
+	  throw error;
+	}
+  };
+  
+const updateDocument = async (collectionPath:string, documentId:string, newData:any) => {
+	try {
+	  // Create a reference to the document in Firestore
+	  const documentRef = doc(db, collectionPath, documentId);
+  
+	  // Update the document with the new data
+	  await setDoc(documentRef, newData, { merge: true });
+	} catch (error) {
+	  console.error("Error updating document:", error);
+	  throw error;
+	}
+  };
+
 const removePolygon = async ({
 	projectId,
 	id,
