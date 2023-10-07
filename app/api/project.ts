@@ -1,3 +1,4 @@
+import { firestoreGeoPoint } from "../components/Map";
 import { db } from "../firebase";
 import {
 	collection,
@@ -34,13 +35,11 @@ const addComment = async ({
 };
 
 const addPolygon = async ({
-	userId,
 	latlngs,
 	projectId,
 	id,
 }: {
 	id: string;
-	userId?: string;
 	projectId: string;
 	latlngs: { lat: number; lng: number }[];
 }) => {
@@ -60,11 +59,9 @@ const addPolygon = async ({
 };
 
 const removePolygon = async ({
-	userId,
 	projectId,
 	id,
   }: {
-	userId?: string;
 	projectId: string;
 	id: number;
   }) => {
@@ -81,5 +78,11 @@ const removePolygon = async ({
 }
   };
   
+const getPolygons = async (projectId: string) => {
+	const polygonsRef = collection(db, "projects", projectId, "polygons");
+	const q = query(polygonsRef);
+	const querySnapshot = await getDocs(q);
+	return querySnapshot.docs.map((doc) => doc.data()) as firestoreGeoPoint[]
+};
 
-export { addComment, addPolygon, removePolygon };
+export { addComment, addPolygon, removePolygon, getPolygons };
