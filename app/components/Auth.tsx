@@ -8,28 +8,31 @@ const Auth = () => {
 	const handleAuth = async () => {
 		const provider = new GoogleAuthProvider();
 		await signInWithPopup(auth, provider)
-			/* .then((result) => {
+			.then((result) => {
+				const credential = GoogleAuthProvider.credentialFromResult(result);
+				const token = credential?.accessToken;
+				const user = result.user;
+				console.log("Logged In", result, token , user);
+			})
+			.catch((error) => {
+				console.log("Caught error Popup closed", error);
+			});
+		/* .then((result) => {
 			GoogleAuthProvider.credentialFromResult(result);
 					const token = credential?.accessToken;
 				const user = result.user;  
 			}) */
-			
 	};
 	return (
 		<div>
-			
 			{isLoggedIn && (
 				<div className="inline-flex items-center">
 					<p className="mr-2">{user.email}</p>
-					<Button onClick={() => auth.signOut()}>
-						Logout
-					</Button>
+					<Button onClick={() => auth.signOut()}>Logout</Button>
 				</div>
 			)}
 			{!isLoggedIn && (
-				<Button onClick={() => handleAuth()}>
-					Login with Google
-				</Button>
+				<Button onClick={() => handleAuth()}>Login with Google</Button>
 			)}
 		</div>
 	);
