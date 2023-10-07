@@ -2,11 +2,8 @@ import { Sidebar } from "~/src";
 import {
 	HiArrowSmRight,
 	HiChartPie,
-	HiInbox,
-	HiShoppingBag,
 	HiTable,
 	HiUser,
-	HiViewBoards,
 } from "react-icons/hi";
 import { SidebarContext } from "~/src/components/Sidebar/SidebarContext";
 

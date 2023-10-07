@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../firebase";
 
 type commentType = {
