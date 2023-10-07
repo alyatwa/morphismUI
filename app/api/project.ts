@@ -3,15 +3,14 @@ import { db } from "../firebase";
 import {
 	collection,
 	addDoc,
-	updateDoc,
 	doc,
 	deleteDoc,
 	GeoPoint,
 	arrayUnion,
 	query,
 	where,
-	writeBatch,
 	getDocs,
+	getDoc,
 } from "firebase/firestore";
 
 const addComment = async ({
@@ -57,32 +56,41 @@ const addPolygon = async ({
 		console.log(err);
 	}
 };
+const getProject = async (projectId: string) => {
+	const docRef = doc(db, "projects", projectId);
+	const docSnap = await getDoc(docRef);
 
+	if (docSnap.exists()) {
+		return docSnap.data()
+	} else {
+		console.log("No such document!");
+	}
+};
 const removePolygon = async ({
 	projectId,
 	id,
-  }: {
+}: {
 	projectId: string;
 	id: number;
-  }) => {
+}) => {
 	console.log("id", id);
 	const polygonsRef = collection(db, "projects", projectId, "polygons");
 	const q = query(polygonsRef, where("id", "==", id.toString()));
 	try {
-	const querySnapshot = await getDocs(q);
-	querySnapshot.forEach((doc) => {
-	  deleteDoc(doc.ref);
-	});
-} catch (err) {
-	console.log(err);
-}
-  };
-  
+		const querySnapshot = await getDocs(q);
+		querySnapshot.forEach((doc) => {
+			deleteDoc(doc.ref);
+		});
+	} catch (err) {
+		console.log(err);
+	}
+};
+
 const getPolygons = async (projectId: string) => {
 	const polygonsRef = collection(db, "projects", projectId, "polygons");
 	const q = query(polygonsRef);
 	const querySnapshot = await getDocs(q);
-	return querySnapshot.docs.map((doc) => doc.data()) as firestoreGeoPoint[]
+	return querySnapshot.docs.map((doc) => doc.data()) as firestoreGeoPoint[];
 };
 
-export { addComment, addPolygon, removePolygon, getPolygons };
+export { addComment, addPolygon, removePolygon, getPolygons, getProject };

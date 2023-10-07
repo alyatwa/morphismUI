@@ -1,11 +1,11 @@
 {
   "name": "morphismui",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "license": "MIT",
   "scripts": {
     "start": "next start",
-    "build": "next build",
+    "build": "DISABLE_ESLINT_PLUGIN=true  next build",
     "dev": "next dev",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",

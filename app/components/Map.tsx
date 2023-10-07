@@ -27,18 +27,17 @@ export type firestoreGeoPoint = {
 	}[];
 };
 export default function MyMap({ position, zoom, projectId }: mapType) {
-	//const { position, zoom } = props;
-	const [mapLayers, setMapLayers] = useState<any[]>([]);
+	//const [mapLayers, setMapLayers] = useState<any[]>([]);
 	const map = useRef<L.FeatureGroup>(null);
 	const _onCreate = async (e: any) => {
 		const { layerType, layer } = e;
 
 		if (layerType === "polygon") {
 			const { _leaflet_id } = layer;
-			setMapLayers((layers: any[]) => [
+			/* setMapLayers((layers: any[]) => [
 				...layers,
 				{ id: _leaflet_id, latlngs: layer.getLatLngs()[0] },
-			]);
+			]); */
 			await addPolygon({
 				id: _leaflet_id.toString(),
 				latlngs: layer.getLatLngs()[0],
@@ -51,11 +50,11 @@ export default function MyMap({ position, zoom, projectId }: mapType) {
 			layers: { _layers },
 		} = e;
 
-		Object.values(_layers).map(({ _leaflet_id }: any) => {
+		/* Object.values(_layers).map(({ _leaflet_id }: any) => {
 			setMapLayers((layers: any[]) =>
 				layers.filter((l) => l.id !== _leaflet_id)
 			);
-		});
+		}); */
 		const id =
 			(Object.values(_layers)[0] as any)?.options?.attribution ??
 			(Object.values(_layers)[0] as any)._leaflet_id;
@@ -77,7 +76,6 @@ export default function MyMap({ position, zoom, projectId }: mapType) {
 					}).addTo(map.current as any);
 				});
 			}
-			setMapLayers(polygons);
 		});
 	};
 
