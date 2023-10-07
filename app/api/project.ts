@@ -67,7 +67,7 @@ const getProject = async (projectId: string) => {
 	}
 };
 const attachReport = async (projectId:string)=>{
-
+console.log(projectId)
 }
 const removePolygon = async ({
 	projectId,
