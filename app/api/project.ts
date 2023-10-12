@@ -9,7 +9,6 @@ import {
 	GeoPoint,
 	arrayUnion,
 	query,
-	where,
 	getDocs,
 	getDoc,
 	setDoc,
@@ -38,45 +37,55 @@ const addComment = async ({
 
 const addPolygon = async ({
 	latlngs,
-	projectId,
-	id,
+	projectId
 }: {
-	id: string;
 	projectId: string;
 	latlngs: { lat: number; lng: number }[];
-}) => {
+}) :Promise<string | null> => {
 	try {
-		await addDoc(collection(db, "projects", projectId, "polygons"), {
-			id,
+		const newDoc = await addDoc(collection(db, "projects", projectId, "polygons"), {
 			projectId,
 			latlngs: arrayUnion(
 				...latlngs.map((l) => {
 					return new GeoPoint(l.lat, l.lng);
 				})
 			),
-		});
+		})
+		return newDoc.id
+
 	} catch (err) {
 		console.log(err);
 	}
+	return null
 };
 const getProject = async (projectId: string) => {
 	const docRef = doc(db, "projects", projectId);
 	const docSnap = await getDoc(docRef);
-
+    let project:any = {}
 	if (docSnap.exists()) {
-		return docSnap.data()
+		project = docSnap.data()
+		const polygonsRef = collection(db, "projects", projectId, "polygons") 
+		const q = query(polygonsRef)
+		const querySnapshot = await getDocs(q);
+		project.polygons = querySnapshot.docs.map((doc) => ({id:doc.id, ...doc.data()})) as firestoreGeoPoint[];
+		console.log("Document data:", project)
+		return project
 	} else {
 		console.log("No such document!");
 	}
 };
 
-const attachReport = async (projectId:string, file:File, storagePath:string) => {
+const attachReport = async (projectId:string, file:File, storagePath:string, polygonId:string) => {
 	try {
-		
+		if(!projectId || !polygonId){
+			
+		console.log('attach:   ',projectId,   polygonId)
+		return
+	}
 	  const storageRef = ref(storage, storagePath);
 	  const snapshot = await uploadBytes(storageRef, file);
 	  const downloadURL = await getDownloadURL(snapshot.ref);
-	  await updateDocument('projects', projectId, { report: downloadURL });
+	  await updateDocument({projectId,polygonId, newData:{ reportURL: downloadURL }});
 	  return downloadURL;
 	  
 	} catch (error) {
@@ -85,10 +94,10 @@ const attachReport = async (projectId:string, file:File, storagePath:string) => 
 	}
   };
   
-const updateDocument = async (collectionPath:string, documentId:string, newData:any) => {
+const updateDocument = async ({projectId,polygonId, newData}:{polygonId:string,projectId:string, newData:{reportURL:string}}) => {
 	try {
 	  // Create a reference to the document in Firestore
-	  const documentRef = doc(db, collectionPath, documentId);
+	  const documentRef = doc(db, 'projects', projectId, 'polygons', polygonId);
   
 	  // Update the document with the new data
 	  await setDoc(documentRef, newData, { merge: true });
@@ -103,26 +112,22 @@ const removePolygon = async ({
 	id,
 }: {
 	projectId: string;
-	id: number;
+	id: string;
 }) => {
 	console.log("id", id);
-	const polygonsRef = collection(db, "projects", projectId, "polygons");
-	const q = query(polygonsRef, where("id", "==", id.toString()));
+	const polygonsRef = doc(db, "projects", projectId, "polygons", id);
 	try {
-		const querySnapshot = await getDocs(q);
-		querySnapshot.forEach((doc) => {
-			deleteDoc(doc.ref);
-		});
+		 await deleteDoc(polygonsRef)
 	} catch (err) {
 		console.log(err);
 	}
 };
 
 const getPolygons = async (projectId: string) => {
-	const polygonsRef = collection(db, "projects", projectId, "polygons");
-	const q = query(polygonsRef);
+	const polygonsRef = collection(db, "projects", projectId, "polygons") 
+	const q = query(polygonsRef)
 	const querySnapshot = await getDocs(q);
-	return querySnapshot.docs.map((doc) => doc.data()) as firestoreGeoPoint[];
+	return querySnapshot.docs.map((doc) => ({id:doc.id, ...doc.data()})) as firestoreGeoPoint[];
 };
 
 export { addComment, addPolygon, removePolygon, getPolygons, getProject, attachReport };

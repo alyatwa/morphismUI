@@ -17,11 +17,6 @@ const Auth = () => {
 			.catch((error) => {
 				console.log("Caught error Popup closed", error);
 			});
-		/* .then((result) => {
-			GoogleAuthProvider.credentialFromResult(result);
-					const token = credential?.accessToken;
-				const user = result.user;  
-			}) */
 	};
 	return (
 		<div>

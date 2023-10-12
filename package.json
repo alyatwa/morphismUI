@@ -4,9 +4,9 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "start": "DISABLE_ESLINT_PLUGIN=true next start",
-    "build": "DISABLE_ESLINT_PLUGIN=true  next build",
-    "dev": "DISABLE_ESLINT_PLUGIN=true next dev",
+    "start": "next start",
+    "build": "next build",
+    "dev": "next dev",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

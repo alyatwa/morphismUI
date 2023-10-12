@@ -6,10 +6,10 @@ import { AccountsSidebar } from "./components/AccountsSidebar";
 //import { MainSidebar } from "./components/MainSidebar";
 import dynamic from "next/dynamic";
 import useAuth from "./hooks/useAuth";
-import { addComment, attachReport, getProject } from "./api/project";
+import { addComment, getProject } from "./api/project";
 import Auth from "./components/Auth";
+
 import CommentsList from "./components/CommentsList";
-import Link from "next/link";
 
 export default function HomeContent() {
 	const { isLoggedIn, user } = useAuth();
@@ -28,27 +28,13 @@ export default function HomeContent() {
 			}),
 		[]
 	);
-	const handleAddReport = async (e: any) => {
-		e.preventDefault();
-		document.getElementById("fileInput")?.click();
-		const file = e.target[0]?.files[0];
-		if (!file) return;
-		const storagePath = "pdfs/" + file.name;
-		try {
-			const downloadURL = await attachReport(projectId, file, storagePath);
-			alert("file uploaded!");
-			console.log("PDF uploaded to:", downloadURL);
-		} catch (error) {
-			console.error("Error uploading PDF:", error);
-		}
-	};
+	
 	const refreshData = () => {
 		if (!user) {
 			setProject(null);
 			return;
 		} else {
 			getProject(projectId).then((data) => {
-				console.log(data);
 				setProject(data);
 			});
 		}
@@ -65,43 +51,19 @@ export default function HomeContent() {
 					</div>
 					<div className="flex flex-row justify-start ">
 						{/* <MainSidebar /> */}
-						<AccountsSidebar />
+					 <AccountsSidebar />
 						{isLoggedIn ? (
 							<>
 								<div className="flex flex-col gap-3 my-3">
 									<p>Data is saved when you create/delete a new polygon</p>
 									{project && (
 										<>
-											<Map
-												position={[
-													project.position._lat,
-													project.position._long,
-												]}
-												zoom={project.zoom}
+											<Map 
+												project={project}
 												projectId={projectId}
 											/>
 
-											<div className="flex items-center justify-around rounded-3xl bg-blue-400/80 h-20">
-												<form onSubmit={handleAddReport} className="form">
-													<input
-														id="fileInput"
-														type="file"
-														className="hidden"
-													/>
-													<Button
-														type="submit"
-														color="transparent"
-														label="Attach Report"
-													/>
-												</form>
-
-												<Link
-													href={{ pathname: project.report }}
-													target="_blank"
-												>
-													{project.report ? "View file" : "No file"}
-												</Link>
-											</div>
+											
 										</>
 									)}
 								</div>
@@ -128,8 +90,8 @@ export default function HomeContent() {
 									Login to view project
 								</p>
 							</div>
-						)}
-					</div>
+						)} 
+					 </div>
 				</div>
 			</div>
 		</Morphism>
