@@ -37,14 +37,17 @@ const addComment = async ({
 
 const addPolygon = async ({
 	latlngs,
+	color,
 	projectId
 }: {
 	projectId: string;
+	color:string;
 	latlngs: { lat: number; lng: number }[];
 }) :Promise<string | null> => {
 	try {
 		const newDoc = await addDoc(collection(db, "projects", projectId, "polygons"), {
 			projectId,
+			color,
 			latlngs: arrayUnion(
 				...latlngs.map((l) => {
 					return new GeoPoint(l.lat, l.lng);
@@ -94,7 +97,7 @@ const attachReport = async (projectId:string, file:File, storagePath:string, pol
 	}
   };
   
-const updateDocument = async ({projectId,polygonId, newData}:{polygonId:string,projectId:string, newData:{reportURL:string}}) => {
+const updateDocument = async ({projectId,polygonId, newData}:{polygonId:string,projectId:string, newData:any}) => {
 	try {
 	  // Create a reference to the document in Firestore
 	  const documentRef = doc(db, 'projects', projectId, 'polygons', polygonId);
@@ -130,4 +133,4 @@ const getPolygons = async (projectId: string) => {
 	return querySnapshot.docs.map((doc) => ({id:doc.id, ...doc.data()})) as firestoreGeoPoint[];
 };
 
-export { addComment, addPolygon, removePolygon, getPolygons, getProject, attachReport };
+export { addComment, addPolygon,updateDocument, removePolygon, getPolygons, getProject, attachReport };
